@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-              <div class="card-header">
+              <div class="card-header" style="background-color:#1B2E4F; color:white">
                 @if (Auth::guard()->check() && Auth::user()->isProfessor)
                 <a href="{{ route("home") }}">Início</a> >
                 <a href="{{ route("/turma/gerenciar", ["id" => $turma->id]) }}">{{$turma->nome}}</a> >
@@ -27,9 +27,11 @@
                         @csrf
 
                         <div class="form-group row">
-
+                          <div class="col-md-12">
+                            Aluno: {{$aluno->name}}
+                          </div>
                             <div class="col-md-12">
-                              {{ $atividade->titulo}}
+                              <br><h2>{{ $atividade->titulo}}<h2>
                             </div>
                         </div>
 
